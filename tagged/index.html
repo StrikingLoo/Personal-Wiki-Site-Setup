@@ -1,0 +1,30 @@
+---
+layout: default
+title: Search
+---
+<h1 id='head'>Articles in wiki tagged under:<br> </h1>
+
+<div id='results' style="text-align:center"></div>
+
+<p>Search is performed by grepping article titles, descriptions and tags, similar to the <a href='/wiki'>wiki</a>'s search bar.</p>
+
+<script type="text/javascript" src="/tag_data.json"></script>
+<script>
+const url_string = window.location.href;
+const url = new URL(url_string);
+const q = url.searchParams.get("q");
+console.log(q);
+var results = document.getElementById('results');
+for (const item of tag_data){
+		if( (item.title && item.title.includes(q))
+		 || (item.description && item.description.includes(q))
+		 || (item.tags && item.tags.includes(q))){
+			result_anchor = document.createElement('a');
+			result_anchor.innerHTML = `<a href="${item.url}" description="${item.description}">${item.title}</a><br/>`;
+		results.appendChild(result_anchor);
+		}
+}
+var header = document.getElementById('head');
+header.innerHTML+= '<i>'+q+'</i>';
+
+</script>

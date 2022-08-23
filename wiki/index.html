@@ -1,0 +1,62 @@
+---
+layout: default
+title: Personal Wiki / Digital Garden
+---
+	<h1>{{ page.title }}</h1>
+
+<p>This is my Personal Wiki/Digital Garden. </p>
+
+<p>Notes importance guide: 🌱 < 🌿 < 🌻.<br>
+🌱: Stub or unimportant, 🌿: curious, usually a single idea, 🌻: interesting, more fleshed out, usually finished. </p>
+<div style = 'text-align:center;'>
+<!-- Html Elements for Search -->
+<input type="text" id="search-input" placeholder="Search the Wiki... (tag-based search)" style='font-size: 1.1rem;text-align:center;min-width:75%;'>
+
+<div id="search-container">
+<ul id="results-container" style='list-style-type:none;'></ul>
+</div>
+
+      <h2>All Notes</h2>
+      <p><i>Or see the <a href="/wiki/navigation-guide"><b>contents section</b></a> for a table of contents.</i></p>
+
+	<ul class="posts">
+{% assign folder1 = site.pages | where_exp: "item" , "item.path contains 'wiki' " | sort:"importance" | reverse %}
+
+{% for item in folder1 %}
+{% if item.path contains 'index' %}
+{% else %}
+<a href="{{ item.url }}" class="wiki-item" title="{{ item.description }}">
+{% if item.importance >= 7 %}🌻{% elsif item.importance >= 5 %}🌿{% else %}🌱
+{% endif %} {{ item.title }}</a>
+{% endif %}
+{% endfor %}
+ </ul>
+
+   
+</div>
+<br/>
+
+<p>Idea and code were taken from <a href='https://strikingloo.github.io/wiki/'>strikingloo's Digital Garden</a>. </p>
+
+
+<!-- Script pointing to search-script.js -->
+<script src="/js/search-script.js" type="text/javascript"></script>
+
+<!-- Configuration -->
+<script>
+SimpleJekyllSearch({
+  searchInput: document.getElementById('search-input'),
+  resultsContainer: document.getElementById('results-container'),
+  json: '/search.json'
+})
+
+const windowWidth = window.innerWidth;
+const maxDeviceWidth = 768;
+if (windowWidth < maxDeviceWidth) {
+  var wiki_list = document.querySelectorAll('.wiki-item');
+  for (var wiki_item of wiki_list) {
+    wiki_item.classList.add('wide');
+  }
+}
+</script>
+   

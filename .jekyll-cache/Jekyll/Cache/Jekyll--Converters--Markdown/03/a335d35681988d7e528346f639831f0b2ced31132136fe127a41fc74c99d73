@@ -1,0 +1,12 @@
+I"<p>Example article in wiki. Edit this in markdown.</p>
+
+<h2 id="title">Title</h2>
+<h3 id="smaller-title">Smaller title</h3>
+
+<p><strong>bold</strong>, <em>italic</em>, <a href="/somewhere">link</a></p>
+
+<ul>
+  <li>list item 1</li>
+  <li>list item 2</li>
+</ul>
+:ET
