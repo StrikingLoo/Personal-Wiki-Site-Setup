@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="icon" type="image/png" href="/potted-plant-icon.png"/>
             <title>{{ page.title }}</title>
+<link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
 			<link rel="canonical" href="{{site.url}}{{ page.url }}">
 			  <meta name="description" content="{% if page.description %}{{ page.description | strip | strip_newlines | truncate: 160 }}{% else %}{{ page.title }}{% endif %}">
   			<meta property="og:site_name" content="{{ page.title }}">
@@ -18,7 +19,7 @@
 			  function gtag(){dataLayer.push(arguments);}
 			  gtag('js', new Date());
 
-			  gtag('config', 'UA-52642322-5');
+			  gtag('config', '{{ page.ga_id }}');
 			</script>
 			{% if page.description %}
 			  <meta property="og:description" content="{{ page.description | strip_newlines | strip | truncate: 160 }}">

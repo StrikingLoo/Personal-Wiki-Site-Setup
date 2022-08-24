@@ -31,12 +31,12 @@ a:hover {
 
 h1, h1 a {
     font-size: 3em;
-    font-family: 'Helvetica','Arial', 'Sans-Serif';
+    font-family: 'Lato','Helvetica','Arial', 'Sans-Serif';
     text-align: center;
 }
 
 h2, h3, h2 a, h3 a {
-    font-family: 'Helvetica', Verdana;
+    font-family: 'Lato','Helvetica', Verdana;
 }
 h2, h2 a {font-size: 2.3rem;}
 h3, h3 a {
