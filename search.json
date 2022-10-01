@@ -1,9 +1,13 @@
 ---
 ---
-{% assign folder1 = site.pages | where_exp: "item" , "item.path contains 'wiki/'" | sort:"path" %}
+{% assign folder1 = site.pages | where_exp: "item" , "item.path contains 'wiki/' " | sort:"importance" | reverse %}
+{% assign folder2 = site.posts | sort:"importance" | reverse %}
+
+{% assign articles = folder1 | concat: folder2 | sort:"importance" | reverse %}
 
 [
-  {% for item in folder1 %}
+  {% for item in articles %}
+  {% if item.sitemap or item.path contains 'wiki/' %}
     {
 
       "title"    : "{{ item.title | escape }}",
@@ -12,8 +16,10 @@
       "description" : "{{item.description | escape }}",
       "tags"     : "{{ item.tags | join: ', ' }}",
       "date"     : "{{ item.date }}",
-      "name" : "{{item.path | remove_first: 'wiki/' | remove_first: '.md' | escape }}"
+      "name" : "{{item.path | remove_first: '.md' | escape }}"
 
-    } {% unless forloop.last %},{% endunless %}
+    }
+    {% unless forloop.last %},{% endunless %}
+    {% endif %}
   {% endfor %}
 ]

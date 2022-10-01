@@ -1,0 +1,22 @@
+h2::after, h3::after {
+    content: "#";
+    position: relative;
+    top: 0em;
+    left: 0.5em;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+h2::after {font-size: 1.4em;}
+h3::after {font-size: 1.2em;}
+
+h2:hover::after, h3:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+div.backButton{
+  position:fixed; 
+  top:80%;
+  right: 5%;
+}

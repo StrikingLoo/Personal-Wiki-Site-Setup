@@ -23,8 +23,7 @@ layout: default
 <script>
 const headings = document.querySelectorAll('h2[id],h3[id]');
 for (var heading of headings) {
-    heading.innerHTML = `<a href=#${heading.id}># ${heading.innerHTML}</a>`;
-    heading.appendChild(document.createElement('hr'))
+    heading.innerHTML = `<a href=#${heading.id}>${heading.innerHTML}</a>`;
 }
 var windowWidth = window.innerWidth;
 var maxDeviceWidth = 768;
@@ -45,3 +44,5 @@ if (windowWidth < maxDeviceWidth) {
 {% else %}
 <meta name="twitter:image:src" content="{{ site.url }}/resources/placeholder.png" />
 {% endif %}
+
+<link rel="stylesheet" type="text/css" href="/css/post.css">

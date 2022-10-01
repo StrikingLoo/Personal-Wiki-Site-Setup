@@ -4,7 +4,7 @@ title: Search
 ---
 <h1 id='head'>Articles in wiki tagged under:<br> </h1>
 
-<div id='results' style="text-align:center"></div>
+<div id='results' style="text-align:center"><ul id="results-container" style="list-style-type:none;"></ul></div>
 
 <p>Search is performed by grepping article titles, descriptions and tags, similar to the <a href='/wiki'>wiki</a>'s search bar.</p>
 
@@ -14,13 +14,13 @@ const url_string = window.location.href;
 const url = new URL(url_string);
 const q = url.searchParams.get("q");
 console.log(q);
-var results = document.getElementById('results');
+var results = document.getElementById('results-container');
 for (const item of tag_data){
 		if( (item.title && item.title.includes(q))
 		 || (item.description && item.description.includes(q))
 		 || (item.tags && item.tags.includes(q))){
 			result_anchor = document.createElement('a');
-			result_anchor.innerHTML = `<a href="${item.url}" description="${item.description}">${item.title}</a><br/>`;
+			result_anchor.innerHTML = `<li style="margin:0.5em;"><a href="${item.url}" description="${item.description}">${item.title}</a></li>`;
 		results.appendChild(result_anchor);
 		}
 }
