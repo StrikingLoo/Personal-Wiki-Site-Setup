@@ -1,12 +1,19 @@
 # Personal Wiki and Static Blog Site Setup
 
-This is a template for my personal site, made with GitHub pages. 
+This is a template for a personal site, made with GitHub pages. 
 
-It uses jekyll, and comes with all the features you need to set up your personal wiki and blog.
+![](resources/pw_screen1.png)
+
+It uses jekyll, and comes with all the features you need to set up your personal wiki (and a minimalistic blog). Available features include:
+
+- Search (with a tagging system)
+- Responsive design
+- Fast loading times
+- Markdown notes (easy to import or export from other tools)
 
 ## Forking this repo
 
-If you want to build your own personal wiki / personal site using mine as a template, all you have to do is:
+If you want to build your own personal wiki / personal site using this template, all you have to do is:
 
 - Fork this repo.
 - Set up the values in `_config.yml` for your twitter username and Google Analytics ID.
