@@ -13,6 +13,8 @@ It uses jekyll, and comes with all the features you need to set up your digital 
 
 Start using a note-taking system without having to invent one from scratch! Easily share your notes with other people by linking them to this site (which can be hosted for free on GitHub pages or netlify).
 
+Original blog post: [How to Set Up Your Own Personal Wiki](https://strikingloo.github.io/personal-wiki-set-up). Additional reading: [Reflections on Note-Taking and Digital Gardening](https://strikingloo.github.io/reflections-digital-gardening).
+
 ## Forking this repo
 
 If you want to build your own personal wiki / personal site using this template, all you have to do is:
