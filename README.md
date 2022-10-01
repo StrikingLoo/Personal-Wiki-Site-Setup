@@ -1,15 +1,17 @@
-# Personal Wiki and Static Blog Site Setup
+# Personal Wiki / Digital Garden and Static Blog Site Setup
 
 This is a template for a personal site, made with GitHub pages. 
 
 ![](resources/pw_screen1.png)
 
-It uses jekyll, and comes with all the features you need to set up your personal wiki (and a minimalistic blog). Available features include:
+It uses jekyll, and comes with all the features you need to set up your digital garden / personal wiki (and a minimalistic blog). Available features include:
 
 - Search (with a tagging system)
 - Responsive design
 - Fast loading times
 - Markdown notes (easy to import or export from other tools)
+
+Start using a note-taking system without having to invent one from scratch! Easily share your notes with other people by linking them to this site (which can be hosted for free on GitHub pages or netlify).
 
 ## Forking this repo
 
